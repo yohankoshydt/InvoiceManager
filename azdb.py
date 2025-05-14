@@ -122,7 +122,7 @@ def generate_pdf_from_html(invoice_data):
 
     current_date = datetime.datetime.now()
     current_month = current_date.strftime("%B").lower()
-    output_pdf_path = f'static/Invoices/{customer}/{current_month}/{filename}.pdf'
+    output_pdf_path = f'static/Invoices/{customer}/{current_month}/{filename}'
    
 
 
