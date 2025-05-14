@@ -47,7 +47,7 @@ Use this tool to generate a new invoice for a customer. The invoice_data must fo
     "Sneakers": 50   // 50% discount
   }}
 }}
-Return the output of this function as the agent response
+
 The output_data_path is calculated automatically and used to store the created invoice.
  
 🔄 Workflow:
