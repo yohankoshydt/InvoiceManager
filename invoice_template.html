@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - From Diacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .invoice-details {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .invoice-details th, .invoice-details td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        .invoice-details th {
+            background-color: #f4f4f4;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice from Diacto</h1>
+    <h2>Customer: {{ customer }}</h2>
+    <p>Date: {{ current_date }}</p>
+    
+    <table class="invoice-details">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Discount (%)</th>
+                <th>Discounted Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product, discount in products.items() %}
+                <tr>
+                    <td>{{ product }}</td>
+                    <td>${{ get_product_price(product) }}</td>
+                    <td>{{ discount }}%</td>
+                    <td>${{ apply_discount(get_product_price(product), discount) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="total">
+        Total: ${{ total }}
+    </div>
+</body>
+</html>
