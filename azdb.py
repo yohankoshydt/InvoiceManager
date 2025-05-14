@@ -118,7 +118,7 @@ def generate_pdf_from_html(invoice_data):
     # SQL query to fetch product price from the 'product' table
     customer_safe = invoice_data["customer"].replace(" ", "_")
     current_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    filename = f"{customer_safe}_{current_date}"
+    filename = f"{customer_safe}_{current_date}.pdf"
 
     current_date = datetime.datetime.now()
     current_month = current_date.strftime("%B").lower()
@@ -188,13 +188,11 @@ if __name__ == "__main__":
 # ('Red Rubber Co.', 'static/Invoices/Red_Rubber/', 'sample-invoice.pdf'),
 # ('TSMC', 'static/Invoices/TSMC/', 'sample-invoice.pdf');
 #  ''')
-    cursor.execute('SELECT * FROM invoice_path')
+    cursor.execute("SELECT * FROM invoice_path")
     rows = cursor.fetchall()
-
     for row in rows:
         print(row)
-
-    cursor.commit()
+    # cursor.commit()
 
 
 
