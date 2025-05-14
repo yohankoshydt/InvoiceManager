@@ -64,6 +64,7 @@ If the user wants to generate a new invoice, structure the input data in the req
 def agent_response(prompt):
 
     logging.info(f'Prompt: {prompt}')
+    
     project_client = AIProjectClient.from_connection_string(
         credential=DefaultAzureCredential(),
         conn_str=os.getenv("AZURE_OPENAI_KEY"),

@@ -181,13 +181,13 @@ if __name__ == "__main__":
     
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM invoice_path")
-    cursor.execute('''INSERT INTO invoice_path (name, path, file_name) VALUES
-('USA Plastics', 'static/Invoices/USA_Plastics/', 'sample-invoice.pdf'),
-('Infinix Steel', 'static/Invoices/Infinix/', 'sample-invoice.pdf'),
-('Red Rubber Co.', 'static/Invoices/Red_Rubber/', 'sample-invoice.pdf'),
-('TSMC', 'static/Invoices/TSMC/', 'sample-invoice.pdf');
- ''')
+#     cursor.execute("DELETE FROM invoice_path")
+#     cursor.execute('''INSERT INTO invoice_path (name, path, file_name) VALUES
+# ('USA Plastics', 'static/Invoices/USA_Plastics/', 'sample-invoice.pdf'),
+# ('Infinix Steel', 'static/Invoices/Infinix/', 'sample-invoice.pdf'),
+# ('Red Rubber Co.', 'static/Invoices/Red_Rubber/', 'sample-invoice.pdf'),
+# ('TSMC', 'static/Invoices/TSMC/', 'sample-invoice.pdf');
+#  ''')
     cursor.execute('SELECT * FROM invoice_path')
     rows = cursor.fetchall()
 
